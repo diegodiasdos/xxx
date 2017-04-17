@@ -1,0 +1,115 @@
+Revisão de  alex da prova 
+1) Usando o cat, crie um arquivo chamado test1, digite "Line1" e salve-o pressionando Ctrl-D.
+
+student:/tmp> cat > test1
+Line1
+
+2) Concatenar os arquivos test1 e test2 em um arquivo chamado newtest.
+
+student:/tmp> cat test1 test2 > newtest
+
+3)Ver o conteúdo de newtest, usando cat.
+
+ student:/tmp> cat newtest
+Line1
+Line2
+
+3)Acrescente o arquivo test3 no final newtest.
+
+ student:/tmp> cat test3 >> newtest
+ 
+4)Anexe o seguinte texto ao newtest: "Line4".
+
+ student:/tmp> cat >> newtest
+Line4
+
+5)Classifique o arquivo de planetas usando classificar.
+
+ student:/tmp> sort planets
+ 
+6)Remover entradas duplicadas do arquivo de planetas usando uniq.
+
+  sort planets | uniq
+
+7) Encontre todos os arquivos com a string doc neles. 
+
+  test1@ubuntu:~$ locate .doc
+  /usr/lib/python2.7/pdb.doc
+
+8) Copie o arquivo denominado pdb.doc de /usr/lib/python2.7 para o diretório de trabalho atual como Myfile.doc.
+ 
+  test1@ubuntu:~$ cp /usr/lib/python2.7/pdb.doc Myfile.doc.
+  
+9) Atualizar banco de dados usando o comando updatedb.
+
+   test1@ubuntu:~$ sudo updatedb
+   
+10)Localize o arquivo Myfile.doc (lembre-se que os nomes de arquivo são sensíveis a maiúsculas e minúsculas!).
+
+  test1@ubuntu:~$ locate Myfile.doc
+   /home/test1/Myfile.doc
+   
+11)Veja todos os arquivos no diretório atual usando o comando ls com a opção -a.
+
+  [test1@CentOS bin]$ ls -a
+.	gindxbib	mkfontscale
+..	gio-querymodules-64	mkhybrid
+[	glib-compile-schemas	mkisofs
+a2p	glookbib	mkmanifest
+ab	glxgears	mkrfc2734
+abrt-action-analyze-backtrace	glxinfo	mkxauth
+abrt-action-analyze-c	gmake	mlabel
+abrt-action-analyze-ccpp-local	gneqn	mmc-tool
+
+12)Lista (usando ls) arquivos com nomes começando por g e contendo cinco letras.
+
+ [test1@CentOS bin]$ ls g????
+ gmake gneqn 
+ 
+13)Lista (usando ls) arquivos cujos nomes começam com mk e terminam com quaisquer caracteres.
+  [test1@CentOS bin]$ ls mk*
+  mkfontscale	mkhybrid	mkisofs	mkmanifest	mkrfc2734	mkxauth
+14)Lista (usando ls) arquivos com cinco nomes de letras começando com g e segundo caractere entre a-n.
+   [test1@CentOS bin]$ ls g[a-n]???
+   gmake gneqn 
+15)Lista (usando ls) cinco letras nomeadas arquivos começando com g e não tendo o segundo caractere entre a-m
+  ls g[!a-m]???
+
+16)  oque é linux.
+  
+ Linux é o núcleo  do sistema operacional, programa responsável  pelo  funcionamento do computador 
+, que  faz  a comunicação entre  hardware(impressora, monitor , mouse, teclado) e software 
+(aplicativo em geral).
+ 
+17)  o que é software livre.
+         A filosofia  do software livre encontra as suas  raízes  na livre troca de conhecimentos e de pensamentos  que podem 
+		 tradicionalmente ser encontrada no campo cientifico. tal como as ideias, os programas  de computador  não  são tangíveis 
+		 e podem  ser copiados  sem perda. A sua distribuição  é a base de um  processo  de evolução que alimenta 
+		 o desenvolvimento  do pensamento.
+18)Procure um arquivo com o nome gcc na pasta / usr usando o comando find.
+ 
+  [test1@CentOS bin]$ find /usr -type f -name gcc
+  /usr/bin/gcc
+  /usr/libexec/gcc
+  find: `/usr/lib64/audit': Permission denied
+  /usr/lib/gcc
+19)Procure um diretório com nome de arquivo gcc, na pasta / usr usando o comando find.
+[test1@CentOS bin]$ find /usr -type d -name gcc
+/usr/libexec/gcc
+find: `/usr/lib64/audit': Permission denied
+/usr/lib/gcc
+
+20)Procure arquivos no diretório atual que foram modificados hoje.
+
+  [test1@CentOS ~]$ find -type f -mtime 0
+./.ICEauthority
+./.esd_auth
+./.gstreamer-0.10/registry.x86_64.bin
+./.gconfd/saved_state
+./.local/share/applications/preferred-mail-reader.desktop
+./.local/share/applications/preferred-web-browser.desktop
+./.local/share/.converted-launchers
+
+21)Procure arquivos com tamanho 0 bytes.
+
+  find -type f -size 0
