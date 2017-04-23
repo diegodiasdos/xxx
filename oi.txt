@@ -217,3 +217,15 @@ find: `/usr/lib64/audit': Permission denied
   find -type f -size 0
 
 **********************************************************************************************************
+
+root@diego-Aspire-ES1-511:~/Área de Trabalho/xxx# git add oi.txt
+root@diego-Aspire-ES1-511:~/Área de Trabalho/xxx# git commit -m 'revisao'
+[master 0cf230b] revisao
+ 1 file changed, 219 insertions(+)
+root@diego-Aspire-ES1-511:~/Área de Trabalho/xxx# git push 
+Username for 'https://github.com': diego.dias@yandex.com
+Password for 'https://diego.dias@yandex.com@github.com': 
+To https://github.com/diegodiasdos/xxx.git
+   68b83a9..0cf230b  master -> master
+root@diego-Aspire-ES1-511:~/Área de Trabalho/xxx# git clone
+
