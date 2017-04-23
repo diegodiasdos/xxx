@@ -1,0 +1,219 @@
+1- Qual o comando  linux para imprimir  uma string na 
+tela?
+
+diego@diego-Aspire-ES1-511:~$ echo " ola mundo"
+ ola mundo
+
+2-Quais são  os 3 comandos linux para mostrar o diretório 
+corrente, listar  todos os arquivos  da pasta atual e mudar 
+de diretório ?
+
+diego@diego-Aspire-ES1-511:/tmp$ ls -l
+total 32
+drwxrwxrwt 2 lightdm lightdm 4096 Abr 22 14:03 at-spi2
+drwx------ 2 diego   diego   4096 Abr 22 14:11 firefox_diego
+drwx------ 2 diego   diego   4096 Abr 22 14:03 keyring-9UqPLo
+drwx------ 2 lightdm lightdm 4096 Abr 22 14:03 pulse-2L9K88eMlGn7
+drwx------ 2 dyyiego   diego   4096 Abr 22 14:03 pulse-AMyfmxo7hBOr
+drwx------ 2 lightdm lightdm 4096 Abr 22 14:03 pulse-CqKMtWJ697u9
+drwx------ 2 root    root    4096 Abr 22 14:02 pulse-PKdhtXMmr18n
+drwx------ 2 diego   diego   4096 Abr 22 14:03 ssh-obkfZFRn2329
+-rw-rw-r-- 1 lightdm lightdm    0 Abr 22 14:03 unity_support_test.0
+
+
+********************************************************************
+diego@diego-Aspire-ES1-511:/tmp$ ls -a
+.        firefox_diego   pulse-2L9K88eMlGn7  pulse-PKdhtXMmr18n    .winbindd
+..       .ICE-unix       pulse-AMyfmxo7hBOr  ssh-obkfZFRn2329      .X0-lock
+at-spi2  keyring-9UqPLo  pulse-CqKMtWJ697u9  unity_support_test.0  .X11-unix
+***************************************************************************
+diego@diego-Aspire-ES1-511:/tmp$ ls -h
+at-spi2         pulse-2L9K88eMlGn7  pulse-PKdhtXMmr18n
+firefox_diego   pulse-AMyfmxo7hBOr  ssh-obkfZFRn2329
+keyring-9UqPLo  pulse-CqKMtWJ697u9  unity_support_test.0
+*************************************************************************
+diego@diego-Aspire-ES1-511:~/Documentos$ ls -l
+total 428
+drwxrwxrwx 2 diego diego   4096 Fev 11 23:32 fs3
+-rw-rw-r-- 1 diego diego 434176 Fev 19 21:39 google.doc
+
+****************************************************************************
+diego@diego-Aspire-ES1-511:~/Documentos$ ls -a
+.  ..  fs3  google.doc
+****************************************************************************
+diego@diego-Aspire-ES1-511:~/Documentos$ ls -q
+fs3  google.doc
+***************************************************************************
+Mudar diretório 
+****************************************************************************
+diego@diego-Aspire-ES1-511:~/Documentos$ cd 
+****************************************************************************
+diego@diego-Aspire-ES1-511:~$ cd -
+/home/diego/Documentos
+****************************************************************************
+
+diego@diego-Aspire-ES1-511:~/Documentos$ cd ..
+diego@diego-Aspire-ES1-511:~$ 
+****************************************************************************
+3 - Exista  um arquivo  chamado  access.log na sua pasta atual.
+qual  é o  comando  para exibir as últimas  3 linhas deste arquivo ?
+
+resposta:
+
+ 
+cat -n "access.log" | sed '3s/3/access.log:>/'
+
+para salvar  um arquivo ctrl +D
+4 - Crie 3 arquivos em branco que comecem com seu nome e termina com uma sequencia 1, 2 e 3. 
+
+diego@diego-Aspire-ES1-511:~$ touch diego1.txt diego2.txt diego3.txt
+
+******************************************************************************
+5 - Crie 1 pasta com seu nome+diadenascimento (ex.:alex25) e copie os 3 arquivos criandos 
+anteriormente para esta pasta.
+Resposta:
+
+diego@diego-Aspire-ES1-511:~$ mkdir diegodias17111988
+
+diego@diego-Aspire-ES1-511:~$ cp -i diego1.txt  diego2.txt  diego3.txt diegodias17111988/  
+*****************************************************************************
+6 - A partir de sua pasta original, usando o comando find do linux, 
+diga quantos diretorios existem cujo nome começa com "pasta"?
+Resposta1 (comando linux usado):
+
+****************************************************************************
+find / -type d -name pasta
+
+7 - Qual o comando linux para :Extrair  todos os endereços 
+IP dos arquivos que  começam  com "access.log" imprimindo 
+um endereço IP  por  linha.
+*******************************************************************
+grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" access.log
+
+
+8-listar  o conteudo de seu diretorio  e direcionar  a saida 
+para o primeiro arquivo do item 4 .
+
+
+echo -e "line1\nline2" > item4.txt
+
+
+cat  item4.txt
+**********************************************************************************
+Revisão de  alex da prova 
+1) Usando o cat, crie um arquivo chamado test1, digite "Line1" e salve-o pressionando Ctrl-D.
+
+student:/tmp> cat > test1
+Line1
+
+2) Concatenar os arquivos test1 e test2 em um arquivo chamado newtest.
+
+student:/tmp> cat test1 test2 > newtest
+
+3)Ver o conteúdo de newtest, usando cat.
+
+ student:/tmp> cat newtest
+Line1
+Line2
+
+3)Acrescente o arquivo test3 no final newtest.
+
+ student:/tmp> cat test3 >> newtest
+ 
+4)Anexe o seguinte texto ao newtest: "Line4".
+
+ student:/tmp> cat >> newtest
+Line4
+
+5)Classifique o arquivo de planetas usando classificar.
+
+ student:/tmp> sort planets
+ 
+6)Remover entradas duplicadas do arquivo de planetas usando uniq.
+
+  sort planets | uniq
+
+7) Encontre todos os arquivos com a string doc neles. 
+
+  test1@ubuntu:~$ locate .doc
+  /usr/lib/python2.7/pdb.doc
+
+8) Copie o arquivo denominado pdb.doc de /usr/lib/python2.7 para o diretório de trabalho atual como Myfile.doc.
+ 
+  test1@ubuntu:~$ cp /usr/lib/python2.7/pdb.doc Myfile.doc.
+  
+9) Atualizar banco de dados usando o comando updatedb.
+
+   test1@ubuntu:~$ sudo updatedb
+   
+10)Localize o arquivo Myfile.doc (lembre-se que os nomes de arquivo são sensíveis a maiúsculas e minúsculas!).
+
+  test1@ubuntu:~$ locate Myfile.doc
+   /home/test1/Myfile.doc
+   
+11)Veja todos os arquivos no diretório atual usando o comando ls com a opção -a.
+
+  [test1@CentOS bin]$ ls -a
+.	gindxbib	mkfontscale
+..	gio-querymodules-64	mkhybrid
+[	glib-compile-schemas	mkisofs
+a2p	glookbib	mkmanifest
+ab	glxgears	mkrfc2734
+abrt-action-analyze-backtrace	glxinfo	mkxauth
+abrt-action-analyze-c	gmake	mlabel
+abrt-action-analyze-ccpp-local	gneqn	mmc-tool
+
+12)Lista (usando ls) arquivos com nomes começando por g e contendo cinco letras.
+
+ [test1@CentOS bin]$ ls g????
+ gmake gneqn 
+ 
+13)Lista (usando ls) arquivos cujos nomes começam com mk e terminam com quaisquer caracteres.
+  [test1@CentOS bin]$ ls mk*
+  mkfontscale	mkhybrid	mkisofs	mkmanifest	mkrfc2734	mkxauth
+14)Lista (usando ls) arquivos com cinco nomes de letras começando com g e segundo caractere entre a-n.
+   [test1@CentOS bin]$ ls g[a-n]???
+   gmake gneqn 
+15)Lista (usando ls) cinco letras nomeadas arquivos começando com g e não tendo o segundo caractere entre a-m
+  ls g[!a-m]???
+
+16)  oque é linux.
+  
+ Linux é o núcleo  do sistema operacional, programa responsável  pelo  funcionamento do computador 
+, que  faz  a comunicação entre  hardware(impressora, monitor , mouse, teclado) e software 
+(aplicativo em geral).
+ 
+17)  o que é software livre.
+  A filosofia  do software livre encontra as suas  raízes  na livre troca de conhecimentos e de pensamentos  que podem 
+  tradicionalmente ser encontrada no campo cientifico. tal como as ideias, os programas  de computador  não  são tangíveis 
+e podem  ser copiados  sem perda. A sua distribuição  é a base de um  processo  de evolução que alimenta 
+o desenvolvimento  do pensamento.
+18)Procure um arquivo com o nome gcc na pasta / usr usando o comando find.
+ 
+  [test1@CentOS bin]$ find /usr -type f -name gcc
+  /usr/bin/gcc
+  /usr/libexec/gcc
+  find: `/usr/lib64/audit': Permission denied
+  /usr/lib/gcc
+19)Procure um diretório com nome de arquivo gcc, na pasta / usr usando o comando find.
+[test1@CentOS bin]$ find /usr -type d -name gcc
+/usr/libexec/gcc
+find: `/usr/lib64/audit': Permission denied
+/usr/lib/gcc
+
+20)Procure arquivos no diretório atual que foram modificados hoje.
+
+  [test1@CentOS ~]$ find -type f -mtime 0
+./.ICEauthority
+./.esd_auth
+./.gstreamer-0.10/registry.x86_64.bin
+./.gconfd/saved_state
+./.local/share/applications/preferred-mail-reader.desktop
+./.local/share/applications/preferred-web-browser.desktop
+./.local/share/.converted-launchers
+
+21)Procure arquivos com tamanho 0 bytes.
+
+  find -type f -size 0
+
+**********************************************************************************************************
